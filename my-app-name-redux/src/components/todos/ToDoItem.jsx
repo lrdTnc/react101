@@ -4,9 +4,9 @@ import {useSelector} from "react-redux";
 import {toggleDone} from "../../actions/ToDoActions.jsx";
 import {useDispatch} from "react-redux";
 
-function ToDoItem(index){
+function ToDoItem({index}){
     console.log("rendered todoItem");
-    const {toDo} = useSelector((state)=> state.toDos[index]);
+    const toDo = useSelector((state)=> state.toDos[index]);
     const dispatch = useDispatch();
     const onChange = (event) => {
         dispatch(toggleDone(index));

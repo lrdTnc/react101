@@ -9,7 +9,7 @@ export const addToDo = (toDo) => {
 
 export const clearToDos = () => {
     return {
-        type: "ADD_TODO"
+        type: "TOGGLE_DONE"
 
     }
 }
@@ -17,7 +17,7 @@ export const clearToDos = () => {
 
 export const toggleDone = (index) => {
     return {
-        type: "TOGGLE_TODO",
+        type: "TOGGLE_DONE",
         payload: index
     }
 }
