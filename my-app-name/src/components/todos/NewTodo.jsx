@@ -4,7 +4,7 @@ import { useState } from "react";
 const NewTodo = (props) => {
     const [value, setValue] = useState('');
     const onAddToDo = () => {
-        props.onAddToDo(value);
+        props.onAddToDo({title: value, done: false});
     }
     return (
         <div>

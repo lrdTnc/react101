@@ -1,13 +1,15 @@
-import { useState } from 'react'
 import NewTodo from './components/todos/NewTodo'
 import ToDoList from './components/todos/ToDoList';
+import {ClearToDoButton} from "./components/todos/ClearToDoButton.jsx";
 
 function App() {
+
   return (
-    <div>
-      <NewTodo />
-      <ToDoList />
-    </div>
+      <div>
+          <NewTodo />
+          <ToDoList/>
+          <ClearToDoButton/>
+      </div>
   );
 }
 

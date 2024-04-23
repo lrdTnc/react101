@@ -1,11 +1,17 @@
-import { Typography } from "@mui/material";
+import ToDoItem from "./ToDoItem.jsx";
 import {useSelector} from "react-redux";
+
 const ToDoList = () => {
-    const toDos = useSelector((state) => state.toDos);
-    console.log(toDos);
+    console.log("rendered todoList");
+    const {numberOfToDos} = useSelector((state)=> state.toDos.length);
+    const listOfToDos = [];
+    for (let i=0; i< numberOfToDos; i++){
+        listOfToDos.push(<ToDoItem index={i} ></ToDoItem>);
+    }
     return (
         <div>
-            {toDos?.map(todoTitle => <Typography variant="h4" key={todoTitle} >{todoTitle}</Typography>)}
+            {listOfToDos}
+
         </div>
     );
 }
