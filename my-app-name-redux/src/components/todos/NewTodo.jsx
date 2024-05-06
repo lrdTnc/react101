@@ -1,13 +1,13 @@
 import { Typography, Button } from "@mui/material";
 import FancyTextField from "../bases/FancyTextField";
-import React, {useContext, useState} from "react";
+import {useState} from "react";
 import {useDispatch} from "react-redux";
 import {addToDo} from "../../actions/ToDoActions.jsx";
 const NewTodo = () => {
     const [value, setValue] = useState('');
     const dispatch = useDispatch();
-    const onAddToDo = () => {
-       dispatch(addToDo({title: value, done: false}));
+    const onAddToDo = async () => {
+       dispatch(await addToDo({title: value, done: false}));
 
     }
     return (

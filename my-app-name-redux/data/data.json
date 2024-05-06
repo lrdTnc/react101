@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "title": "Hello from json",
+      "done": false
+    },
+    {
+      "id": "110a",
+      "title": "Testttt",
+      "done": false
+    },
+    {
+      "id": "d0b6",
+      "title": "Miau",
+      "done": true
+    }
+  ]
+}

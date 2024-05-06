@@ -1,5 +1,7 @@
 export const ToDoReducer = (state = [], action) =>{
     switch (action.type){
+        case "LOAD_TODOS":
+            return [...action.payload];
         case "ADD_TODO":
             return [...state,action.payload];
         case "CLEAR_TODOS":

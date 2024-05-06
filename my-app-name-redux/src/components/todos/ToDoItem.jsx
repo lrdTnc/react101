@@ -8,8 +8,8 @@ function ToDoItem({index}){
     console.log("rendered todoItem");
     const toDo = useSelector((state)=> state.toDos[index]);
     const dispatch = useDispatch();
-    const onChange = (event) => {
-        dispatch(toggleDone(index));
+    const onChange = () => {
+        dispatch(toggleDone(index, toDo));
     }
     return (
         <div>
