@@ -1,13 +1,17 @@
 import { Typography, Button } from "@mui/material";
 import FancyTextField from "../bases/FancyTextField";
-import React, {useContext, useState} from "react";
+import {useState} from "react";
 import {useDispatch} from "react-redux";
-import {addToDo} from "../../actions/ToDoActions.jsx";
+import {useInjection} from "inversify-react";
+import {ToDoService} from "../services/ToDoService.jsx";
+
 const NewTodo = () => {
     const [value, setValue] = useState('');
     const dispatch = useDispatch();
-    const onAddToDo = () => {
-       dispatch(addToDo({title: value, done: false}));
+    const toDoService = useInjection(ToDoService);
+    const onAddToDo = async() => {
+       //dispatch(await addToDoBE({title: value, done: false}));
+        dispatch(await toDoService.addToDoBE({title: value, done: false}));
 
     }
     return (

@@ -6,6 +6,8 @@ export const ToDoReducer = (state = [], action) =>{
             return state.filter(e=> !e.done);
         case "TOGGLE_DONE":
             return state.map((e,index)=> index === action.payload ? {...e, done: !e.done} : e);
+        case "GET_ALL_TODOS":
+            return  [...action.payload];
         default:
             return state;
     }

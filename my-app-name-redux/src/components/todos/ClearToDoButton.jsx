@@ -1,7 +1,6 @@
 import {Button} from "@mui/material";
-import React, {useContext} from "react";
-import {ToDoContext} from "../../contexts/ToDoContext.jsx";
-import {clearToDos, toggleDone} from "../../actions/ToDoActions.jsx";
+import React from "react";
+import {clearToDos} from "../../actions/ToDoActions.jsx";
 import {useDispatch} from "react-redux";
 
 export const ClearToDoButton = () => {
