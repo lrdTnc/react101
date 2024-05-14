@@ -2,17 +2,12 @@
   "toDos": [
     {
       "id": "4ff9",
-      "title": "122",
+      "title": "first todo",
       "done": false
     },
     {
       "id": "9d4a",
-      "title": "qqq",
-      "done": false
-    },
-    {
-      "id": "9e26",
-      "title": "gdhfdhd",
+      "title": "second todo",
       "done": false
     }
   ]

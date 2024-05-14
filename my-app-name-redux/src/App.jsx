@@ -1,28 +1,24 @@
-import {useEffect} from 'react'
-import NewTodo from './components/todos/NewTodo'
-import ToDoList from './components/todos/ToDoList';
-import {ClearToDoButton} from "./components/todos/ClearToDoButton.jsx";
-import {useDispatch} from "react-redux";
-import {getAllToDosBE} from "./apis/ToDosApi.jsx";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {WelcomePage} from "./routes/WelcomePage.jsx";
+import {EditToDo} from "./routes/EditToDo.jsx";
+import {useInjection} from "inversify-react";
+import {ToDoService} from "./components/services/ToDoService.jsx";
 
 function App() {
-
-    const dispatch = useDispatch();
-    useEffect(() => {
-        const getToDos = async () => {
-
-            dispatch(await getAllToDosBE());
+    const toDoService = useInjection(ToDoService)
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: <WelcomePage/>,
+        },
+        {
+            path: "/edit/:id",
+            element: <EditToDo/>,
+            loader: toDoService.getToDoById,
+            errorElement: <h1>Not Found</h1>,
         }
-        getToDos();
-    }, [dispatch]);
-
-    return (
-        <div>
-            <NewTodo/>
-            <ToDoList/>
-            <ClearToDoButton/>
-        </div>
-    );
+    ]);
+    return <RouterProvider router={router}></RouterProvider>;
 }
 
 export default App
