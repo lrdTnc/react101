@@ -1,5 +1,10 @@
-export const genericErrorHandler = (error) => {
-    console.log(error);
+export const genericErrorHandler = (messageSetter) => {
 
-    return Promise.resolve(null);
+    return (error) => {
+        if (error.response.status === 404) {
+            messageSetter('Not found');
+            return Promise.resolve('Not found');
+        }
+        return Promise.resolve(null);
+    };
 }

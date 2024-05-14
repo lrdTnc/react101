@@ -1,14 +1,10 @@
 import axios from "axios";
 import {addToDo, getAllToDos, toggleDone} from "../actions/ToDoActions.jsx";
-import {genericErrorHandler} from "../components/bases/GenericErrorHandler.jsx";
-
-
 
 const toDoApi = axios.create({
     baseURL: 'http://localhost:3000/toDos',
     timeout: 1000
 });
-toDoApi.interceptors.response.use((response)=>{ return response}, genericErrorHandler);
 
 export const addToDoBE = async (toDo) => {
     const response = await toDoApi.post('/',toDo);

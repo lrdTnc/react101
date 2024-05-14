@@ -15,4 +15,9 @@ export class ToDoService {
         const response = await this.toDoApi.get('/');
         return getAllToDos( response ? response.data : []);
     }
+
+    clearToDosBE = async () => {
+        await this.toDoApi.delete('/clear');
+        return getAllToDos([]);
+    }
 }
