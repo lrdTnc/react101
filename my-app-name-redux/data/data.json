@@ -2,37 +2,12 @@
   "toDos": [
     {
       "id": "4ff9",
-      "title": "122",
+      "title": "first todo",
       "done": false
     },
     {
       "id": "9d4a",
-      "title": "qqq",
-      "done": false
-    },
-    {
-      "id": "9e26",
-      "title": "gdhfdhd",
-      "done": false
-    },
-    {
-      "id": "dc3f",
-      "title": "hei",
-      "done": false
-    },
-    {
-      "id": "632c",
-      "title": "hei",
-      "done": false
-    },
-    {
-      "id": "9868",
-      "title": "hei",
-      "done": false
-    },
-    {
-      "id": "8e75",
-      "title": "test",
+      "title": "second todo",
       "done": false
     }
   ]
