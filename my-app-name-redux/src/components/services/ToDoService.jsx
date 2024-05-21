@@ -23,4 +23,8 @@ export class ToDoService {
         const response = await this.toDoApi.get(`/${loaderParams.params.id}`);
         return response?.data;
     }
+    updateToDoBE = async (toDo) => {
+        const response = await this.toDoApi.put(`/${toDo.id}`, toDo);
+        return response?.data;
+    }
 }
